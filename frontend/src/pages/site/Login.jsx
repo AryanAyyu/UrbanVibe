@@ -30,7 +30,6 @@ export default function Login() {
         <button className="w-full bg-black text-white rounded py-2">Login</button>
       </form>
       <p className="text-sm mt-3">No account? <Link to="/signup" className="underline">Sign up</Link></p>
-      <div className="text-xs text-gray-500 mt-4">Admin creds: UrbanVibe@urban / 12345678</div>
     </div>
   )
 }

@@ -36,7 +36,5 @@ npm install
 npm run dev
 ```
 
-Admin login:
-- username: UrbanVibe@urban
-- password: 12345678
+
 
