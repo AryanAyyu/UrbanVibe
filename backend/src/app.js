@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
+import mongoose from 'mongoose';
 import authRoutes from './routes/authRoutes.js';
 import productRoutes from './routes/productRoutes.js';
 import adminRoutes from './routes/adminRoutes.js';
@@ -17,6 +18,14 @@ app.use(cookieParser());
 app.use(morgan('dev'));
 
 app.get('/', (req, res) => res.json({ message: 'UrbanVibe API' }));
+
+app.get('/health', (req, res) => {
+  res.json({
+    status: 'ok',
+    uptime: process.uptime(),
+    db: mongoose.connection.readyState,
+  });
+});
 
 app.use('/auth', authRoutes);
 app.use('/products', productRoutes);
